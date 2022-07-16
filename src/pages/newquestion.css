@@ -1,0 +1,16 @@
+.newquestion-container {
+  display: flex;
+  justify-content: center;
+}
+
+.newquestion-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.newquestion-form label {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+}
