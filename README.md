@@ -1,6 +1,7 @@
-# Slido Clone
+# My Questions
 
-Recriando a ferramenta slido. Nesta aplicação utilizei React.js com componentes funcionais utilizando context como forma de compartilhar dados entres os componentes.
+Treinando componente funcionais com uma aplicação de perguntas que funciona de maneira semelhante à ferramenta Slido.
+Este projeto foi desenvolvido com React.js e utiliza Context como forma de compartilhar dados entres os componentes.
 
 Melhorias:
 - Criar lógica da interação com palmas;
