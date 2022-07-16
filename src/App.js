@@ -14,12 +14,12 @@ function App() {
 
   return (
     <main className="App">
-      <header>
-        <section>
-          <h3 onClick={ goToHome }>Trybe Questions</h3>
+      <header className="main-header">
+        <section className="main-header-title">
+          <h1 onClick={ goToHome }>My Questions</h1>
         </section>
       </header>
-      <section className="routes">
+      <section className="main-section">
         <Routes>
           <Route path="/new-question" element={ <NewQuestionPage /> } />
           <Route path="/" element={ <QuestionListPage /> } />

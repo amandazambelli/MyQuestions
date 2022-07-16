@@ -4,9 +4,9 @@ import QuestionsContext from './QuestionsContext';
 function QuestionsProvider({ children }) {
   const INITIAL_STATE = [
     {
-      id: 1,
-      name: 'Primeiro',
-      question: 'Primeira pergunta',
+      id: 0,
+      name: 'Mia',
+      question: 'Como você está?',
       claps: 0
     }
   ];
