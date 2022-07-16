@@ -1,12 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import QuestionsContext from '../context/QuestionsContext';
-import './newquestion.css';
 
 export default function NewQuestionPage() {
   const [name, setName] = useState('');
   const [question, setQuestion] = useState('');
   const { addNewQuestion } = useContext(QuestionsContext);
+  const { questions } = useContext(QuestionsContext);
 
   const navigate = useNavigate();
 
@@ -17,10 +17,8 @@ export default function NewQuestionPage() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    const id = 0;
-
     const newQuestion = {
-      id,
+      id: questions.length,
       name: name,
       question: question,
       claps: 0
@@ -41,7 +39,7 @@ export default function NewQuestionPage() {
   }
 
   return (
-    <section className="newquestion-container">
+    <section className="question-section">
       <form onSubmit={ handleFormSubmit } className="newquestion-form">
         <label htmlFor="question">
           Digite a pergunta:

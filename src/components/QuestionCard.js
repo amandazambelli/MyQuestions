@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
-import './questioncard.css';
+import QuestionsContext from '../context/QuestionsContext';
 
 export default function QuestionCard({ question }) {
 
-  function handleClickClap(questionId) {
-    console.log('TODO: increment claps in the question on the questionList inside of the global state');
+  const { questions } = useContext(QuestionsContext);
+  const [claps, setClaps] = useState(0);
+
+  function handleClickClap(CurrQuestionId) {
+    const questionClap = questions.find((question) => question.id === CurrQuestionId);
+    if (questionClap.claps === 0) {
+      const sumClaps = questionClap.claps + 1;
+      setClaps(sumClaps);
+    }
+    console.log(claps)
+    if (questionClap.claps === 1) {
+      const zero = 0;
+      setClaps(zero);
+    }
   }
 
   return (
@@ -13,7 +25,7 @@ export default function QuestionCard({ question }) {
       <header className="question-card-header">
         <img
           className="question-card-image"
-          src="https://i.pinimg.com/564x/fe/43/dd/fe43dde6d650b6d31ab47a1e01714b65.jpg"
+          src="https://cdn.pixabay.com/photo/2020/12/16/04/16/dinosaur-5835666_960_720.jpg"
           alt=""
         />
         { question.name }
@@ -28,7 +40,7 @@ export default function QuestionCard({ question }) {
         >
           👏
         </span>
-        {question.claps} Palmas
+        { claps } Palmas
       </p>
     </section>
   )

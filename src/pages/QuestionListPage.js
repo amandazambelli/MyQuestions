@@ -7,14 +7,13 @@ export default function QuestionListPage() {
   const navigate = useNavigate();
 
   const goToNewQuestion = () => {
-    console.log(navigate);
     navigate('/new-question');
   };
 
   return (
-    <section className="list-page">
+    <section>
     <QuestionList />
-    <button type="button" onClick={goToNewQuestion}>
+    <button className="btn-new-question" type="button" onClick={ goToNewQuestion }>
       Nova Pergunta
     </button>
   </section>
